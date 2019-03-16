@@ -1,2 +1,2 @@
-# leetcode_solution
-leetcode解答通过的代码
+# OJ_solution
+各大OJ网站评测通过的代码
