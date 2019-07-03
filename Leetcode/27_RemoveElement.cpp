@@ -11,12 +11,3 @@ public:
         return j;
     }
 };
-
-int main(){
-    Solution s;
-    int len = s.removeElement(nums, val);
-    for (int i = 0; i < len; i++) {
-        print(nums[i]);
-    }
-    return 0;
-}
