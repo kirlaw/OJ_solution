@@ -40,6 +40,7 @@ int main(){
     string str;
     cin>>str;
     Solution s;
-    cout<<s.isValid(str);
-    getchar();
+    //将bool输出成true或
+    cout << boolalpha<<s.isValid(str)<<endl;
+    return 0; 
 }
