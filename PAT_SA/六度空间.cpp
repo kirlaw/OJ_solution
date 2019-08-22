@@ -1,3 +1,4 @@
+///*
 #include<bits/stdc++.h>
 #define MAX 1001
 
@@ -5,9 +6,9 @@ using namespace std;
 
 bool vis[MAX]={false};
 vector<int>Adj[MAX];
-double n;//Óë¸Ã½áµã¾àÀë²»³¬¹ı6µÄ½áµãÊı
+double n;//ä¸è¯¥ç»“ç‚¹è·ç¦»ä¸è¶…è¿‡6çš„ç»“ç‚¹æ•°
 
-//¹ã¶ÈÓÅÏÈËÑË÷
+//å¹¿åº¦ä¼˜å…ˆæœç´¢
 void BFS(int i,int depth){
 	int last=i,temp;
 	vis[i]=true;
@@ -27,7 +28,7 @@ void BFS(int i,int depth){
 		}
 		if(i==last){
 			depth++;
-			last=temp;//Ã¿²ãµÄ×îºóÒ»¸ö½áµã
+			last=temp;//æ¯å±‚çš„æœ€åä¸€ä¸ªç»“ç‚¹
 		}
 	} 	
 } 
@@ -51,7 +52,8 @@ int main() {
 	return 0;
 }
 
-/*
+//*/
+/* 
 #include<bits/stdc++.h>
 #define MAX 1001
 
@@ -59,9 +61,9 @@ using namespace std;
 
 bool vis[MAX]={false};
 vector<int>Adj[MAX];
-double n;//Óë¸Ã½áµã¾àÀë²»³¬¹ı6µÄ½áµãÊı
+double n;//ä¸è¯¥ç»“ç‚¹è·ç¦»ä¸è¶…è¿‡6çš„ç»“ç‚¹æ•°
 
-//Éî¶ÈÓÅÏÈËÑË÷
+//æ·±åº¦ä¼˜å…ˆæœç´¢
 void DFS(int i,int depth){
 	vis[i]=true;
 	for(int j=0;j<Adj[i].size();j++){
@@ -69,6 +71,11 @@ void DFS(int i,int depth){
 		if(vis[Adj[i][j]]==false&&depth<6){
 			depth++;
 			n++;
+			DFS(Adj[i][j],depth);
+			depth--;
+		}
+		else if(vis[Adj[i][j]]==true&&depth<6){
+			depth++;
 			DFS(Adj[i][j],depth);
 			depth--;
 		}
@@ -90,9 +97,7 @@ int main() {
 		DFS(i,depth);
 		//cout<<n<<endl;
 		cout<<i<<": "<<fixed<<setprecision(2)<<n/N*100.00<<"%"<<endl; 
-		for(int i=1;i<N+1;i++){
-			vis[i]=false;
-		}
+		memset(vis,false,sizeof(vis));
 	} 
 	return 0;
 }
