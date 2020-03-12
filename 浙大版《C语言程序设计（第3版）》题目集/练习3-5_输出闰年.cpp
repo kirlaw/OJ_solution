@@ -6,7 +6,6 @@ int main(){
     int count=0;
     if(year<=2000||year>2100){
         printf("Invalid year!");
-        return 0;
     }
     else{
         for(int i=2004;i<=year;i+=4){
@@ -15,9 +14,9 @@ int main(){
                 count++;
             }
         }
-    }
-    if(count==0){
-        printf("None");
+        if(count==0){
+        	printf("None");
+    	}
     }
     return 0;
 }
